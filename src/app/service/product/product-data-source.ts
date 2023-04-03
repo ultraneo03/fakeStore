@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Product } from 'src/app/models';
+import { environment } from 'src/app/config';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductDataSource {
-  private apiUrl = 'https://localhost:7118/api/Products';
+  private apiUrl = environment.apiFakeStoreUrl;
   private origin = 'fakeStore';
 
   constructor(private http: HttpClient) {}

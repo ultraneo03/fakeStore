@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Product } from 'src/app/models';
+import { environment } from 'src/app/config';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductDJDataSource {
-  private apiUrl = 'https://localhost:7118/api/ProductsDJ';
+  private apiUrl = environment.apiDummyJsonUrl;
   private origin = 'DummyJson';
 
   constructor(private http: HttpClient) {}
