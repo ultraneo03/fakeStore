@@ -1,0 +1,12 @@
+.carousel-item {
+  height: 30vh; /* Establece la altura a un 30% del alto de la ventana */
+}
+
+.carousel-caption {
+  text-align: left; /* Alinea el texto a la izquierda */
+  color: rgba(0, 7, 7, 0.873);
+}
+
+.carousel-caption h3 {
+  letter-spacing: 0.3em; /* Establece el espacio entre las letras del título */
+}

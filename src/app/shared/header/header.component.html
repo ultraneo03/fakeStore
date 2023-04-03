@@ -1,0 +1,40 @@
+<header class="bg-light">
+  <div class="container py-3">
+    <div class="row align-items-center">
+      <div class="col-md-3">
+        <img src="ruta-del-logo" alt="Logo de la tienda" class="img-fluid" />
+      </div>
+      <div class="col-md-6">
+        <form class="form-inline">
+          <div class="input-group w-100">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Buscar productos"
+              aria-label="Buscar productos"
+              aria-describedby="boton-buscar"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button" id="boton-buscar">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-3">
+        <div class="d-flex justify-content-end">
+          <a href="#" class="btn btn-link px-2">Home</a>
+          <a href="#" class="btn btn-link px-2">Tienda</a>
+          <button routerLink="cart" class="btn btn-primary">
+            <i style="font-size: 30px" class="fas fa-cart-plus"></i>
+            <div style="font-size: 10px" class="badge bg-danger">
+              {{ totalItem }}
+            </div>
+            <!--      <div style="font-size: 10px;" class="badge bg-danger">5</div>-->
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
