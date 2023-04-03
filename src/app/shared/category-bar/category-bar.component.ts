@@ -13,15 +13,15 @@ export class CategoryBarComponent {
   constructor(private router: Router) {}
 
   categories = [
-    { id: 1, name: 'Ropa' },
-    { id: 2, name: 'Electrónicos' },
-    { id: 3, name: 'Hogar' },
-    { id: 4, name: 'Deportes' },
-    { id: 5, name: 'Juguetes' },
+    { id: 1, name: 'Motorcycle' },
+    { id: 2, name: 'Electronics' },
+    { id: 3, name: 'Laptops' },
+    { id: 4, name: 'Automotive' },
+    { id: 5, name: 'Fragances' },
     { id: 0, name: 'All' },
   ];
 
   goToCategory(id: number) {
-    this.router.navigate(['/productos/categoria', id]);
+    this.router.navigate(['/products']);
   }
 }

@@ -1,5 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {
+  CartRoutingModule,
+  HomeRoutingModule,
+  ProductDetailRoutingModule,
+  ProductsRoutingModule,
+} from './modules';
 
 /* This is the routing configuration for the application. */
 const routes: Routes = [
@@ -13,17 +19,27 @@ const routes: Routes = [
     loadChildren: () => import('./modules').then((m) => m.HomeModule),
   },
   {
-    path: 'productos',
-    loadChildren: () => import('./modules').then((m) => m.ProductsComponent),
+    path: 'products',
+    loadChildren: () => import('./modules').then((m) => m.ProductsModule),
   },
   {
-    path: 'productos/categoria/:id',
-    loadChildren: () => import('./modules').then((m) => m.ProductsComponent),
+    path: 'product-detail/:id',
+    loadChildren: () => import('./modules').then((m) => m.ProductDetailModule),
+  },
+  {
+    path: 'cart',
+    loadChildren: () => import('./modules').then((m) => m.CartModule),
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    ProductsRoutingModule,
+    ProductDetailRoutingModule,
+    CartRoutingModule,
+    HomeRoutingModule,
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -85,7 +85,6 @@ export class LocalStorageService {
 
   getTopRatedProducts(): Product[] {
     const products = this.getProducts();
-    console.log(products);
     return products.sort((a, b) => b.rating - a.rating).slice(0, 3);
   }
 }

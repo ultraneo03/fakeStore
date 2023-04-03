@@ -30,4 +30,16 @@ export class ProductDataSource {
     );
     return result;
   }
+
+  getProductRemoteById(productId: number): Observable<Product> {
+    const url = `${this.apiUrl}/${productId}`;
+    var result = this.http.get<Product>(url).pipe(
+      map((response) => {
+        const product = response;
+        product.origin = this.origin;
+        return product;
+      })
+    );
+    return result;
+  }
 }

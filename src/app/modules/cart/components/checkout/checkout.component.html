@@ -1,0 +1,53 @@
+<ng-container *ngIf="soldProducts.length !== 0">
+  <!--<ng-container *ngIf=false>-->
+  <div class="container">
+    <div class="card">
+      <h5 class="card-title">Checkout Resume</h5>
+    </div>
+    <div class="center">
+      <ng-container *ngIf="soldProducts.length !== 0">
+        <!--<ng-container *ngIf=true>-->
+        <div class="container">
+          <div class="card-table">
+            <div class="cart-product">
+              <table class="table table-responsive">
+                <thead>
+                  <tr>
+                    <th>Sr.No</th>
+                    <th>Product Name</th>
+                    <th>Product Image</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of soldProducts; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>
+                      <img alt="" src="{{ item.image }}" style="width: 120px" />
+                    </td>
+                    <td style="width: 25%">{{ item.description }}</td>
+                    <th style="width: 12%">{{ item.price }}</th>
+                    <td style="width: 12%">{{ item.qty }}</td>
+                    <td style="width: 12%">{{ item.total }}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="4"></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <strong>Grand Total : ${{ grandTotal }}</strong>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>

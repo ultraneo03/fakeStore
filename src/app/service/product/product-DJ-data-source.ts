@@ -29,4 +29,16 @@ export class ProductDJDataSource {
       })
     );
   }
+
+  getProductRemoteById(productId: number): Observable<Product> {
+    const url = `${this.apiUrl}/${productId}`;
+    var result = this.http.get<any>(url).pipe(
+      map((response) => {
+        const product = response;
+        product.origin = this.origin;
+        return product;
+      })
+    );
+    return result;
+  }
 }

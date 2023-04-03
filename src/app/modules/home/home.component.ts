@@ -10,7 +10,6 @@ export class HomeComponent {
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    console.log('obtener productos');
     this.productService.getProducts(true, 1, 200, '', 'name');
   }
 }

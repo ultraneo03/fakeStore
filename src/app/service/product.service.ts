@@ -10,10 +10,25 @@ import { ProductDJDataSource } from './product/product-DJ-data-source';
 export class ProductService {
   private products: Product[] = [];
 
+  private product: Product;
+
   constructor(
     private dataSource: ProductDataSource,
     private djDataSource: ProductDJDataSource
-  ) {}
+  ) {
+    this.product = {
+      id: 0,
+      category: '',
+      description: '',
+      image: '',
+      images: [],
+      name: '',
+      origin: '',
+      price: 0,
+      rating: 4,
+      stock: 0,
+    };
+  }
 
   async getProducts(
     fromBoth: boolean = false,
@@ -68,5 +83,32 @@ export class ProductService {
     }
 
     return this.products;
+  }
+
+  async getProduct(
+    fromBoth: boolean = false,
+    productId: number,
+    origin?: string
+  ): Promise<Product> {
+    if (fromBoth) {
+      if (origin === 'fakeStore') {
+        await this.dataSource
+          .getProductRemoteById(productId)
+          .subscribe((product: Product) => {
+            if (product) {
+              this.product = product;
+            }
+          });
+      } else {
+        await this.djDataSource
+          .getProductRemoteById(productId)
+          .subscribe((product: Product) => {
+            if (product) {
+              this.product = product;
+            }
+          });
+      }
+    }
+    return this.product;
   }
 }

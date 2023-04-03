@@ -2,7 +2,12 @@
   <div class="container py-3">
     <div class="row align-items-center">
       <div class="col-md-3">
-        <img src="ruta-del-logo" alt="Logo de la tienda" class="img-fluid" />
+        <img
+          src="https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg"
+          alt="icon store"
+          width="100px"
+          class="img-fluid"
+        />
       </div>
       <div class="col-md-6">
         <form class="form-inline">
@@ -10,12 +15,12 @@
             <input
               type="text"
               class="form-control"
-              placeholder="Buscar productos"
-              aria-label="Buscar productos"
-              aria-describedby="boton-buscar"
+              placeholder="search products"
+              aria-label="search products"
+              aria-describedby="botton-search"
             />
             <div class="input-group-append">
-              <button class="btn btn-primary" type="button" id="boton-buscar">
+              <button class="btn btn-primary" type="button" id="botton-search">
                 <i class="fas fa-search"></i>
               </button>
             </div>
@@ -24,14 +29,17 @@
       </div>
       <div class="col-md-3">
         <div class="d-flex justify-content-end">
-          <a href="#" class="btn btn-link px-2">Home</a>
-          <a href="#" class="btn btn-link px-2">Tienda</a>
-          <button routerLink="cart" class="btn btn-primary">
+          <button (click)="goToByName('home')" class="btn btn-primary">
+            Home
+          </button>
+          <button (click)="goToByName('products')" class="btn btn-primary">
+            Shop
+          </button>
+          <button (click)="goToByName('cart')" class="btn btn-primary">
             <i style="font-size: 30px" class="fas fa-cart-plus"></i>
             <div style="font-size: 10px" class="badge bg-danger">
               {{ totalItem }}
             </div>
-            <!--      <div style="font-size: 10px;" class="badge bg-danger">5</div>-->
           </button>
         </div>
       </div>

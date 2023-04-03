@@ -9,6 +9,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { CartService, ProductService } from './service';
 import { CategoryBarComponent } from './shared/category-bar/category-bar.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { CategoryBarComponent } from './shared/category-bar/category-bar.compone
     CategoryBarComponent,
     HttpClientModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [ProductService, CartService],
   bootstrap: [AppComponent],
